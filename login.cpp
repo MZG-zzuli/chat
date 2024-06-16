@@ -16,26 +16,27 @@ Login::Login(QWidget *parent)
     mainLayout->addLayout(imgLayout);
     QHBoxLayout* nameLayout=new QHBoxLayout;
     nameLayout->addWidget(new QLabel(QStringLiteral("用户:")));
-    QLineEdit* name=new QLineEdit;
+    QLineEdit* name=new QLineEdit(this);
     nameLayout->addWidget(name);
     mainLayout->addLayout(nameLayout);
 
     QHBoxLayout* pwLayout=new QHBoxLayout;
     pwLayout->addWidget(new QLabel(QStringLiteral("密码:")));
-    QLineEdit* pw=new QLineEdit;
+    QLineEdit* pw=new QLineEdit(this);
+    pw->setEchoMode(QLineEdit::Password);
     pwLayout->addWidget(pw);
     mainLayout->addLayout(pwLayout);
 
     QHBoxLayout* forgetLayout=new QHBoxLayout;
     forgetLayout->setAlignment(Qt::AlignRight);
-    QPushButton* forgetButton=new QPushButton(QStringLiteral("忘记密码"));
+    QPushButton* forgetButton=new QPushButton(QStringLiteral("忘记密码"),this);
     forgetLayout->addWidget(forgetButton);
     mainLayout->addLayout(forgetLayout);
 
-    QPushButton* loginButton=new QPushButton(QStringLiteral("登录"));
+    QPushButton* loginButton=new QPushButton(QStringLiteral("登录"),this);
     mainLayout->addWidget(loginButton);
 
-    QPushButton* registButton=new QPushButton(QStringLiteral("注册"));
+    QPushButton* registButton=new QPushButton(QStringLiteral("注册"),this);
     mainLayout->addWidget(registButton);
     //connect(registButton,SIGNAL(clicked(bool)),this,SLOT(registHandle()));
     connect(registButton,&QPushButton::clicked,this,[=]{

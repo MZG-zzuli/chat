@@ -1,0 +1,3 @@
+﻿#err_tip[state='normal']{
+    color:red;
+}

@@ -4,11 +4,11 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow{parent}
 {
     setMaximumSize(250,400);
-    QStackedWidget* mainWidget=new QStackedWidget;
+    QStackedWidget* mainWidget=new QStackedWidget(this);
     setCentralWidget(mainWidget);
 
-    loginWindow=new Login;
-    registWindow=new Regist;
+    loginWindow=new Login(this);
+    registWindow=new Regist(this);
     mainWidget->addWidget(loginWindow);
     mainWidget->addWidget(registWindow);
     connect(loginWindow,&Login::toRegist,this,[=]{

@@ -12,6 +12,7 @@ HEADERS += \
     regist.h
 
 RESOURCES += \
-    img.qrc
+    img.qrc \
+    qss.qrc
 
 DISTFILES +=
