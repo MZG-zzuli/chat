@@ -8,6 +8,12 @@
 #include<QLineEdit>
 #include<QStyle>
 #include<QDebug>
+#include<global.h>
+#include<QJsonDocument>
+#include<QJsonObject>
+#include<QMap>
+#include"httpmgr.h"
+
 class Regist : public QWidget
 {
     Q_OBJECT
@@ -20,9 +26,12 @@ private:
     QLineEdit* pw=nullptr;
     QLineEdit* pw2=nullptr;
     QLineEdit* check=nullptr;
-    void changeErrtip(QString message);
+    void showTip(QString message,bool b_ok);
+    void initHttpHandlers();
+    QMap<ReqId,std::function<void(QJsonObject&)>> _handlers;
 private slots:
     void getChectClick();
+    void slot_reg_mod_finish(ReqId id, QString res, ErrorCodes err);
 signals:
     void noToLogin();
 
