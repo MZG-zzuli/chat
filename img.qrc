@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>img/qq_pic_merged_1718351502937.jpg</file>
+        <file>img/unvisible.png</file>
+        <file>img/unvisible_hover.png</file>
+        <file>img/visible.png</file>
+        <file>img/visible_hover.png</file>
     </qresource>
 </RCC>

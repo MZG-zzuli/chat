@@ -4,3 +4,27 @@
 #err_tip[state="err"]{
     color:red;
 }
+#pwvis[state='unvisible']{
+    border-image: url(:/img/unvisible.png);
+}
+#pwvis[state='unvisible_hover']{
+   border-image: url(:/img/unvisible_hover.png);
+}
+#pwvis[state='visible']{
+   border-image: url(:/img/visible.png);
+}
+#pwvis[state='visible_hover']{
+   border-image: url(:/img/visible_hover.png);
+}
+#pwvis2[state='unvisible']{
+   border-image: url(:/img/unvisible.png);
+}
+#pwvis2[state='unvisible_hover']{
+   border-image: url(:/img/unvisible_hover.png);
+}
+#pwvis2[state='visible']{
+   border-image: url(:/img/visible.png);
+}
+#pwvis2[state='visible_hover']{
+   border-image: url(:/img/visible_hover.png);
+}

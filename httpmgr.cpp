@@ -16,6 +16,7 @@ void HttpMgr::PostHttpReq(QUrl url, QJsonObject json, ReqId req_id, Modules mod)
     request->setUrl(url);
     std::shared_ptr<HttpMgr> self=shared_from_this();
     QNetworkReply* reply=manager->post(*request,data);
+    qDebug()<<"======"<<url;
     connect(reply,&QNetworkReply::finished,this,[self,req_id,mod,reply](){
         if(reply->error()!=QNetworkReply::NoError)
         {
@@ -24,6 +25,8 @@ void HttpMgr::PostHttpReq(QUrl url, QJsonObject json, ReqId req_id, Modules mod)
             return;
         }
         QString res=reply->readAll();
+
+
         emit self->sig_http_finish(req_id,res,ErrorCodes::SUCCESS,mod);
         reply->deleteLater();
         return;
