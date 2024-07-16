@@ -29,8 +29,14 @@ Login::Login(QWidget *parent)
 
     QHBoxLayout* forgetLayout=new QHBoxLayout;
     forgetLayout->setAlignment(Qt::AlignRight);
-    QPushButton* forgetButton=new QPushButton(QStringLiteral("忘记密码"),this);
-    forgetLayout->addWidget(forgetButton);
+    ClickedLabel* forget_label=new ClickedLabel(this);
+    connect(forget_label,&ClickedLabel::clicked,this,[this](){
+        emit toResetPwd();
+    });
+    forget_label->setText(QStringLiteral("忘记密码"));
+    forget_label->setObjectName("forget_label");
+    forget_label->SetState("normal","hover","selected","selected_hover");
+    forgetLayout->addWidget(forget_label);
     mainLayout->addLayout(forgetLayout);
 
     QPushButton* loginButton=new QPushButton(QStringLiteral("登录"),this);

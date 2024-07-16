@@ -190,6 +190,7 @@ void Regist::initHttpHandlers()
             return;
         }
         showTip(tr("用户注册成功"), true);
+        emit registOk();
         qDebug()<<"reg success";
 
 
@@ -238,6 +239,7 @@ void Regist::slot_reg_mod_finish(ReqId id, QString res, ErrorCodes err)
     }
     QJsonObject jsonObj=jsondoc.object();
     //处理
+    qDebug()<<"----regist";
     _handlers[id](jsonObj);
     return;
 }

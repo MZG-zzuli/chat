@@ -7,6 +7,8 @@
 #include<login.h>
 #include<regist.h>
 #include<QDebug>
+#include"registsuccess.h"
+#include"resetpwd.h"
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -17,6 +19,8 @@ signals:
 private:
     Login* loginWindow=nullptr;
     Regist* registWindow=nullptr;
+    RegistSuccess* registSuccessWindow=nullptr;
+    ResetPwd* resetPwdWindow=nullptr;
 
 };
 

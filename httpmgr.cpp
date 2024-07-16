@@ -22,11 +22,12 @@ void HttpMgr::PostHttpReq(QUrl url, QJsonObject json, ReqId req_id, Modules mod)
         {
             emit self->sig_http_finish(req_id,"",ErrorCodes::ERR_NETWORK,mod);
             reply->deleteLater();
+            qDebug()<<"error http";
             return;
         }
         QString res=reply->readAll();
 
-
+        qDebug()<<"success http"<<res;
         emit self->sig_http_finish(req_id,res,ErrorCodes::SUCCESS,mod);
         reply->deleteLater();
         return;
@@ -41,8 +42,16 @@ HttpMgr::~HttpMgr()
 
 void HttpMgr::HttpMgr::slot_http_finish(ReqId id, QString res, ErrorCodes err, Modules mod)
 {
+    qDebug()<<"http slot1";
     if(mod==Modules::REGISTERMOD)
     {
+        qDebug()<<"http slot2";
         emit sig_reg_mod_finish(id,res,err);
     }
+    if(mod==Modules::RESETMOD)
+    {
+        emit sig_reset_mod_finish(id,res,err);
+    }
+
+    qDebug()<<"http slot3";
 }

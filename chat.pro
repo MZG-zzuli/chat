@@ -9,6 +9,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     regist.cpp \
+    registsuccess.cpp \
+    resetpwd.cpp \
     timerbtn.cpp
 
 HEADERS += \
@@ -19,6 +21,8 @@ HEADERS += \
     login.h \
     mainwindow.h \
     regist.h \
+    registsuccess.h \
+    resetpwd.h \
     timerbtn.h
 
 RESOURCES += \

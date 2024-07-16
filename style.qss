@@ -28,3 +28,10 @@
 #pwvis2[state='visible_hover']{
    border-image: url(:/img/visible_hover.png);
 }
+#forget_label[state='normal'],#forget_label[state='selected']{
+    color:black;
+}
+
+#forget_label[state='hover'], #forget_label[state='selected_hover']{
+    color: rgb(42, 112, 241);
+}

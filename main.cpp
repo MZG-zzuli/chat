@@ -5,6 +5,7 @@
 #include<QStyle>
 #include<QFile>
 #include<QDebug>
+#include"registsuccess.h"
 int main(int argc,char* argv[])
 {
     QApplication app(argc,argv);

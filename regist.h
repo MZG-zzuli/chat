@@ -41,6 +41,7 @@ private slots:
     void slot_reg_mod_finish(ReqId id, QString res, ErrorCodes err);
     void yesButtonClick();
 signals:
+    void registOk();
     void noToLogin();
 
 };
