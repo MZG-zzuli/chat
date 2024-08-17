@@ -11,6 +11,7 @@ SOURCES += \
     regist.cpp \
     registsuccess.cpp \
     resetpwd.cpp \
+    tcpmgr.cpp \
     timerbtn.cpp
 
 HEADERS += \
@@ -23,6 +24,7 @@ HEADERS += \
     regist.h \
     registsuccess.h \
     resetpwd.h \
+    tcpmgr.h \
     timerbtn.h
 
 RESOURCES += \
